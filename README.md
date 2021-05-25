@@ -60,34 +60,34 @@ last thing, use `npm start` to start the application.
 ├── LICENSE
 ├── README.md
 ├── __tests__
-│   └── server.test.js
+│   └── src
+│       └── auth
+│           ├── basic-auth-middleware.test.js
+│           ├── bearer-auth-middleware.test.js
+│           └── router.test.js
 ├── assets
-│   ├── api-server.PNG
-│   └── api1.png
+│   └── bearer-uml.png
 ├── index.js
 ├── package-lock.json
 ├── package.json
 └── src
-    ├── error-handlers
-    │   ├── 404.js
-    │   └── 500.js
+    ├── auth
+    │   ├── middleware
+    │   │   ├── basic.js
+    │   │   ├── bearer.js
+    │   │   └── ouath.js
+    │   ├── models
+    │   │   └── users-model.js
+    │   └── router.js
     ├── middleware
-    │   ├── logger.js
-    │   └── validator.js
-    ├── models
-    │   ├── clothes.js
-    │   ├── dataMngr.js
-    │   └── food.js
+    │   ├── 404.js
+    │   ├── 500.js
+    │   └── model-finder.js
     ├── routes
-    │   ├── clothes.js
-    │   └── food.js
+    │   └── rootRoute.js
     └── server.js
 ```
 
-## Test Coverage
-
-![](./assets/api-server.PNG)
-
 ## UML Diagram
 
-![](./assets/basic-api-server.PNG)
+![](./assets/bearer-uml.png)
