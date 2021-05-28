@@ -14,15 +14,18 @@ module.exports = async (req, res, next) => {
     next('authorization is failed, problem casued by non provided headers');
   }
   try {
+    console.log(req.headers);
     let encoded = req.headers.authorization;
     let userString = encoded.split(' ').pop();
     let decoded = base64.decode(userString); // username:pass
     const [username, password] = decoded.split(':');
 
     let user = await Users.authnticateBasic(username, password);
+    console.log('user:', user);
     req.user = user;
+
     next();
   } catch (error) {
-    next('Invalid Login');
+    res.status(403).send(error);
   }
 };

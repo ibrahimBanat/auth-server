@@ -14,7 +14,7 @@ router.post('/signin', basic, signinhandler);
 async function signinhandler(req, res) {
   res.status(200).json({
     user: req.user,
-    token: req.token,
+    token: req.user.token,
   });
 }
 

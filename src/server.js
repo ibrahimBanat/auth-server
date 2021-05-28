@@ -25,7 +25,7 @@ module.exports = {
   server: app,
   start: port => {
     let PORT = port || 3000;
-    app.listen(port, () => {
+    app.listen(PORT, () => {
       console.log('app is working . . .');
       console.log(`app is running http://localhost:${PORT}`);
     });

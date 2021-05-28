@@ -28,6 +28,7 @@ usersSchema.pre('save', async function () {
 usersSchema.statics.authnticateBasic = async function (username, password) {
   try {
     const user = await this.findOne({ username });
+
     const isValid = await bcrypt.compare(password, user.password);
     if (isValid) {
       return user;
